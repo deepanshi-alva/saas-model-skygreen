@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import background from "@/public/images/auth/login-screen-rodic-lms.png";
+import background from "@/public/images/auth/login-screen-skygreen1.png";
 import { useState } from "react";
 import LogInForm from "@/components/auth/login-form";
 import { useSearchParams } from 'next/navigation';
@@ -15,8 +15,8 @@ function Login() {
         <div className="min-h-screen basis-full flex flex-wrap w-full  justify-center overflow-y-auto">
           <div
             className="basis-1/2 bg-primary w-full  relative hidden xl:flex justify-center items-center bg-gradient-to-br
-        from-primary-600 via-primary-400 to-primary-600
-       "
+              from-primary-600 via-primary-400 to-primary-600
+            "
           >
             <div className="relative z-10 max-w-[1024px]">
               <div>
