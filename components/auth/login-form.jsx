@@ -307,10 +307,14 @@ const LogInForm = ({ setContactType, contactType }) => {
         toast.success("OTP verified successfully");
         // setContactType("email-verify");
       }
-      generateToken(response.data?.data?.user.id);
+      // generateToken(response.data?.data?.user.id);
       // toast.success("Login Successful");
       localStorage.setItem("token", response.data?.data.token);
       localStorage.removeItem("email");
+      // 🔥 Redirect after small delay so toast shows
+      setTimeout(() => {
+        router.push("/");
+      }, 2000);
     } catch (error) {
       toast.error(
         error.response?.data?.error?.message ||
@@ -455,7 +459,7 @@ const LogInForm = ({ setContactType, contactType }) => {
             </div>
           )}
 
-          <div className="mt-5  mb-8 flex flex-wrap gap-2">
+          {/* <div className="mt-5  mb-8 flex flex-wrap gap-2">
             <div className="flex-1 flex  items-center gap-1.5 ">
               <Checkbox
                 {...register("remember-me")}
@@ -478,9 +482,9 @@ const LogInForm = ({ setContactType, contactType }) => {
             >
               Forgot Password?
             </Link>
-          </div>
+          </div> */}
           <Button
-            className="w-full"
+            className="w-full mt-6"
             disabled={isPending}
             size={!isDesktop2xl ? "lg" : "md"}
           >
@@ -584,7 +588,7 @@ const LogInForm = ({ setContactType, contactType }) => {
         </form>
       )}
 
-      <Button
+      {/* <Button
         className="w-full mt-6"
         color="dark"
         variant="outline"
@@ -594,7 +598,7 @@ const LogInForm = ({ setContactType, contactType }) => {
       >
         {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
         {isLoading ? "Loading..." : "Signup"}
-      </Button>
+      </Button> */}
     </div>
   );
 };

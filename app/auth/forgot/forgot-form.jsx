@@ -10,7 +10,6 @@ import { Loader2 } from "lucide-react";
 import toast from "react-hot-toast";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { SiteLogo } from "@/components/svg";
 import axios from "axios";
@@ -18,10 +17,10 @@ import axios from "axios";
 const schema = z.object({
   email: z.string().email({ message: "Your email is invalid." }),
 });
+
 const ForgotForm = () => {
   const [isPending, startTransition] = React.useTransition();
   const isDesktop2xl = useMediaQuery("(max-width: 1530px)");
-  const router = useRouter();
   const {
     register,
     handleSubmit,
