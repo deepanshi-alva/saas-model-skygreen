@@ -89,11 +89,11 @@ const Footer = () => {
       </div>
       <div className="relative bg-default-900 dark:bg-default-50 py-6">
         <div className="container flex flex-col text-center md:text-start md:flex-row gap-2">
-          <p className="text-primary-foreground flex-1 text-base xl:text-lg font-medium">COPYRIGHT &copy; 2024 Rodic LMS All rights Reserved </p>
-          <p>Email support queries to lmssupport@rodicconsultants.com</p>
+          <p className="text-primary-foreground flex-1 text-base xl:text-lg font-medium">COPYRIGHT © {new Date().getFullYear()} All rights Reserved </p>
+          <p>Email support queries to deepanshisinghal1523@gmail.com</p>
           <p className="text-primary-foreground flex-none text-base font-medium">
             Made by {" "}
-            <Link href="https://www.vocso.com" target="__blank" className="text-primary hover:underline">VOCSO</Link></p>
+            <Link href="https://www.vocso.com" target="__blank" className="text-primary hover:underline">DEEPANSHI</Link></p>
         </div>
       </div>
     </footer>

@@ -83,9 +83,9 @@ const FooterContent = () => {
   return (
     <div className="block md:flex md:justify-between text-muted-foreground">
       <p className="sm:mb-0 text-xs md:text-sm">
-        COPYRIGHT © {new Date().getFullYear()} Rodic LMS All rights Reserved
+        COPYRIGHT © {new Date().getFullYear()} All rights Reserved
       </p>
-        <p>Email support queries to lmssupport@rodicconsultants.com</p>
+        <p>Email support queries to deepanshisinghal1523@gmail.com</p>
       <p className="mb-0 text-xs md:text-sm">
         Made by{" "}
         <a
@@ -93,7 +93,7 @@ const FooterContent = () => {
           target="__blank"
           href="https://www.vocso.com"
         >
-          VOCSO
+          DEEPANSHI
         </a>
       </p>
     </div>

@@ -3031,51 +3031,51 @@ function titleCase(str) {
   return splitStr.join(' ');
 }
 export const NavBar = {
-  ADMIN: [
+  SUPER_ADMIN: [
     {
       isHeader: true,
       title: "Dashboard",
     },
-    {
-      title: 'Dashboard',
-      isOpen: false,
-      isHide: false,
-      icon: Lmsdashboard,
-      child: [
-        {
-          title: "Admin",
-          icon: Google,
-          href: '/admin/dashboard'
-        },
-        // {
-        //   title: "Manager",
-        //   icon: Google,
-        //   href: '/manager/manager-dashboard'
-        // },
-        {
-          title: "User",
-          icon: Pointer,
-          // href: '/admin/user-dashboard'
-          href: '/public/user-dashboard'
-        },
-        // {
-        //   title: 'Announcement',
-        //   href: '/public/announcement',
-        //   icon: DashBoard,
-        // },
-        {
-          title: "Course Proposals",
-          icon: Pointer,
-          href: '/public/course-proposals'
-        },
-        {
-          title: "Propose Course",
-          icon: Pointer,
-          href: '/public/propose-course'
-        },
-      ],
+    // {
+    //   title: 'Dashboard',
+    //   isOpen: false,
+    //   isHide: false,
+    //   icon: Lmsdashboard,
+    //   child: [
+    //     // {
+    //     //   title: "Admin",
+    //     //   icon: Google,
+    //     //   href: '/admin/dashboard'
+    //     // },
+    //     // {
+    //     //   title: "Manager",
+    //     //   icon: Google,
+    //     //   href: '/manager/manager-dashboard'
+    //     // },
+    //     {
+    //       title: "User",
+    //       icon: Pointer,
+    //       // href: '/admin/user-dashboard'
+    //       href: '#'
+    //     },
+    //     // {
+    //     //   title: 'Announcement',
+    //     //   href: '/public/announcement',
+    //     //   icon: DashBoard,
+    //     // },
+    //     // {
+    //     //   title: "Course Proposals",
+    //     //   icon: Pointer,
+    //     //   href: '/public/course-proposals'
+    //     // },
+    //     // {
+    //     //   title: "Propose Course",
+    //     //   icon: Pointer,
+    //     //   href: '/public/propose-course'
+    //     // },
+    //   ],
 
-    },
+    // },
     {
       isHeader: true,
       title: "Courses",
@@ -3085,540 +3085,540 @@ export const NavBar = {
       isHide: false,
       icon: Courses,
     },
-    {
-      title: 'My Learning', href: '/public/course', isOpen: false,
-      isHide: false,
-      icon: Mycourses,
-    },
-    {
-      title: 'Recommendation', href: '/public/course-recommend', isOpen: false,
-      isHide: false,
-      icon: Courses,
-    },
     // {
-    //   title: ' Course Moderation', href: '/public/course-moderation', isOpen: false,
+    //   title: 'My Learning', href: '/public/course', isOpen: false,
+    //   isHide: false,
+    //   icon: Mycourses,
+    // },
+    // {
+    //   title: 'Recommendation', href: '/public/course-recommend', isOpen: false,
     //   isHide: false,
     //   icon: Courses,
     // },
-    {
-      isHeader: true,
-      title: "Assignments",
-    },
-    {
-      title: 'All Assignments', href: '/public/all-assignments', isOpen: false,
-      isHide: false,
-      icon: Assignments,
-    },
-    {
-      title: 'My Attempts', href: '/public/my-attempts', isOpen: false,
-      isHide: false,
-      icon: Assignments,
-    },
-    {
-      title: 'Recommendation', href: '/public/assignment-recommend', isOpen: false,
-      isHide: false,
-      icon: Courses,
-    },
-    {
-      isHeader: true,
-      title: "Announcement",
-    },
-    {
-      title: 'All Announcements', href: '/public/announcement', isOpen: false,
-      isHide: false,
-      icon: Announcement,
-    },
-    {
-      title: 'My Certificates', href: '/public/my-certificate', isOpen: false,
-      isHide: false,
-      icon: Certificate,
-    },
-    {
-      isHeader: true,
-      title: "Manage Courses",
-    },
-    {
-      title: 'Courses', href: '/admin/course', isOpen: false,
-      isHide: false,
-      icon: Courses,
-    },
-    {
-      title: 'Course Category', href: '/admin/course-categories', isOpen: false,
-      isHide: false,
-      icon: Courses,
-    },
-    {
-      title: 'Recommend Courses', href: '/admin/course-recommend', isOpen: false,
-      isHide: false,
-      icon: Courses,
-    },
-    {
-      isHeader: true,
-      title: "Manage Assignments",
-    },
-    {
-      title: 'Assignments', href: '/admin/assignment', isOpen: false,
-      isHide: false,
-      icon: Assignments,
-    },
-    {
-      title: 'Question Banks', href: '/admin/question-banks', isOpen: false,
-      isHide: false,
-      icon: Questionbank,
-    },
-    {
-      title: 'Recommend Assignment', href: '/admin/assignment-recommend', isOpen: false,
-      isHide: false,
-      icon: Courses,
-    },
+    // // {
+    // //   title: ' Course Moderation', href: '/public/course-moderation', isOpen: false,
+    // //   isHide: false,
+    // //   icon: Courses,
+    // // },
+    // {
+    //   isHeader: true,
+    //   title: "Assignments",
+    // },
+    // {
+    //   title: 'All Assignments', href: '/public/all-assignments', isOpen: false,
+    //   isHide: false,
+    //   icon: Assignments,
+    // },
+    // {
+    //   title: 'My Attempts', href: '/public/my-attempts', isOpen: false,
+    //   isHide: false,
+    //   icon: Assignments,
+    // },
+    // {
+    //   title: 'Recommendation', href: '/public/assignment-recommend', isOpen: false,
+    //   isHide: false,
+    //   icon: Courses,
+    // },
+    // {
+    //   isHeader: true,
+    //   title: "Announcement",
+    // },
+    // {
+    //   title: 'All Announcements', href: '/public/announcement', isOpen: false,
+    //   isHide: false,
+    //   icon: Announcement,
+    // },
+    // {
+    //   title: 'My Certificates', href: '/public/my-certificate', isOpen: false,
+    //   isHide: false,
+    //   icon: Certificate,
+    // },
+    // {
+    //   isHeader: true,
+    //   title: "Manage Courses",
+    // },
+    // {
+    //   title: 'Courses', href: '/admin/course', isOpen: false,
+    //   isHide: false,
+    //   icon: Courses,
+    // },
+    // {
+    //   title: 'Course Category', href: '/admin/course-categories', isOpen: false,
+    //   isHide: false,
+    //   icon: Courses,
+    // },
+    // {
+    //   title: 'Recommend Courses', href: '/admin/course-recommend', isOpen: false,
+    //   isHide: false,
+    //   icon: Courses,
+    // },
+    // {
+    //   isHeader: true,
+    //   title: "Manage Assignments",
+    // },
+    // {
+    //   title: 'Assignments', href: '/admin/assignment', isOpen: false,
+    //   isHide: false,
+    //   icon: Assignments,
+    // },
+    // {
+    //   title: 'Question Banks', href: '/admin/question-banks', isOpen: false,
+    //   isHide: false,
+    //   icon: Questionbank,
+    // },
+    // {
+    //   title: 'Recommend Assignment', href: '/admin/assignment-recommend', isOpen: false,
+    //   isHide: false,
+    //   icon: Courses,
+    // },
 
-    {
-      title: 'Announcement', href: '/admin/announcement', isOpen: false,
-      isHide: false,
-      icon: Announcement,
-    },
-    {
-      title: 'Certificate', href: '/admin/certificate', isOpen: false,
-      isHide: false,
-      icon: Certificate,
-    },
-    {
-      isHeader: true,
-      title: "Manage Users",
-    },
-    {
-      title: 'User', href: '/admin/user', isOpen: false,
-      isHide: false,
-      icon: Lmsuser,
-    },
-    {
-      title: 'Employee Performance Analysis', href: '/admin/employee-performance', isOpen: false,
-      isHide: false,
-      icon: Lmsuser,
-    },
+    // {
+    //   title: 'Announcement', href: '/admin/announcement', isOpen: false,
+    //   isHide: false,
+    //   icon: Announcement,
+    // },
+    // {
+    //   title: 'Certificate', href: '/admin/certificate', isOpen: false,
+    //   isHide: false,
+    //   icon: Certificate,
+    // },
+    // {
+    //   isHeader: true,
+    //   title: "Manage Users",
+    // },
+    // {
+    //   title: 'User', href: '/admin/user', isOpen: false,
+    //   isHide: false,
+    //   icon: Lmsuser,
+    // },
+    // {
+    //   title: 'Employee Performance Analysis', href: '/admin/employee-performance', isOpen: false,
+    //   isHide: false,
+    //   icon: Lmsuser,
+    // },
   ],
-  Public: [
-    {
-      isHeader: true,
-      title: "Dashboard",
-    },
-    {
-      title: 'Dashboard',
-      isOpen: false,
-      isHide: false,
-      icon: Lmsdashboard,
-      child: [
-        {
-          title: 'user-dashboard', href: '/public/user-dashboard', isOpen: false,
-          isHide: false,
-          icon: Lmsdashboard
-        },
-        {
-          title: "Course Proposals",
-          icon: Pointer,
-          href: '/public/course-proposals'
-        },
-        {
-          title: "Propose Course",
-          icon: Pointer,
-          href: '/public/propose-course'
-        },
+  // Public: [
+  //   {
+  //     isHeader: true,
+  //     title: "Dashboard",
+  //   },
+  //   {
+  //     title: 'Dashboard',
+  //     isOpen: false,
+  //     isHide: false,
+  //     icon: Lmsdashboard,
+  //     child: [
+  //       {
+  //         title: 'user-dashboard', href: '/public/user-dashboard', isOpen: false,
+  //         isHide: false,
+  //         icon: Lmsdashboard
+  //       },
+  //       {
+  //         title: "Course Proposals",
+  //         icon: Pointer,
+  //         href: '/public/course-proposals'
+  //       },
+  //       {
+  //         title: "Propose Course",
+  //         icon: Pointer,
+  //         href: '/public/propose-course'
+  //       },
 
-      ],
+  //     ],
 
-    },
-    {
-      isHeader: true,
-      title: "Courses",
-    },
-    {
-      title: 'Courses', href: '/public/course-categories', isOpen: false,
-      isHide: false,
-      icon: Courses,
-    },
-    {
-      title: 'My Learning', href: '/public/course', isOpen: false,
-      isHide: false,
-      icon: Mycourses,
-    },
-    {
-      title: 'Recommendation', href: '/public/course-recommend', isOpen: false,
-      isHide: false,
-      icon: Courses,
-    },
-    // {
-    //   title: ' Course Moderation', href: '/public/course-moderation', isOpen: false,
-    //   isHide: false,
-    //   icon: Courses,
-    // },
-    {
-      title: 'My Certificate', href: '/public/my-certificate  ', isOpen: false,
-      isHide: false,
-      icon: Certificate,
-    },
+  //   },
+  //   {
+  //     isHeader: true,
+  //     title: "Courses",
+  //   },
+  //   {
+  //     title: 'Courses', href: '/public/course-categories', isOpen: false,
+  //     isHide: false,
+  //     icon: Courses,
+  //   },
+  //   {
+  //     title: 'My Learning', href: '/public/course', isOpen: false,
+  //     isHide: false,
+  //     icon: Mycourses,
+  //   },
+  //   {
+  //     title: 'Recommendation', href: '/public/course-recommend', isOpen: false,
+  //     isHide: false,
+  //     icon: Courses,
+  //   },
+  //   // {
+  //   //   title: ' Course Moderation', href: '/public/course-moderation', isOpen: false,
+  //   //   isHide: false,
+  //   //   icon: Courses,
+  //   // },
+  //   {
+  //     title: 'My Certificate', href: '/public/my-certificate  ', isOpen: false,
+  //     isHide: false,
+  //     icon: Certificate,
+  //   },
 
-    {
-      isHeader: true,
-      title: "Assignments",
-    },
-    {
-      title: 'Announcement', href: '/public/announcement', isOpen: false,
-      isHide: false,
-      icon: Announcement,
-    },
-    {
-      title: 'My Certificate', href: '/admin/my-certificate  ', isOpen: false,
-      isHide: false,
-      icon: Certificate,
-    },
-    {
-      title: 'Recommendation', href: '/public/assignment-recommend', isOpen: false,
-      isHide: false,
-      icon: Courses,
-    },
-  ],
-  EMPLOYEE: [
-    {
-      isHeader: true,
-      title: "Dashboard",
-    },
-    {
-      title: 'Dashboard',
-      isOpen: false,
-      isHide: false,
-      icon: Lmsdashboard,
-      child: [
-        {
-          title: 'user-dashboard', href: '/public/user-dashboard', isOpen: false,
-          isHide: false,
-          icon: Lmsdashboard
-        },
-        {
-          title: "Course Proposals",
-          icon: Pointer,
-          href: '/public/course-proposals'
-        },
-        {
-          title: "Propose Course",
-          icon: Pointer,
-          href: '/public/propose-course'
-        },
+  //   {
+  //     isHeader: true,
+  //     title: "Assignments",
+  //   },
+  //   {
+  //     title: 'Announcement', href: '/public/announcement', isOpen: false,
+  //     isHide: false,
+  //     icon: Announcement,
+  //   },
+  //   {
+  //     title: 'My Certificate', href: '/admin/my-certificate  ', isOpen: false,
+  //     isHide: false,
+  //     icon: Certificate,
+  //   },
+  //   {
+  //     title: 'Recommendation', href: '/public/assignment-recommend', isOpen: false,
+  //     isHide: false,
+  //     icon: Courses,
+  //   },
+  // ],
+  // EMPLOYEE: [
+  //   {
+  //     isHeader: true,
+  //     title: "Dashboard",
+  //   },
+  //   {
+  //     title: 'Dashboard',
+  //     isOpen: false,
+  //     isHide: false,
+  //     icon: Lmsdashboard,
+  //     child: [
+  //       {
+  //         title: 'user-dashboard', href: '/public/user-dashboard', isOpen: false,
+  //         isHide: false,
+  //         icon: Lmsdashboard
+  //       },
+  //       {
+  //         title: "Course Proposals",
+  //         icon: Pointer,
+  //         href: '/public/course-proposals'
+  //       },
+  //       {
+  //         title: "Propose Course",
+  //         icon: Pointer,
+  //         href: '/public/propose-course'
+  //       },
 
-      ],
+  //     ],
 
-    },
-    {
-      isHeader: true,
-      title: "Courses",
-    },
-    {
-      title: 'Courses', href: '/public/course-categories', isOpen: false,
-      isHide: false,
-      icon: Courses,
-    },
-    {
-      title: 'My Learning', href: '/public/course', isOpen: false,
-      isHide: false,
-      icon: Mycourses,
-    },
-    {
-      title: 'Course Recommend', href: '/public/course-recommend', isOpen: false,
-      isHide: false,
-      icon: Courses,
-    },
-    // {
-    //   title: ' Course Moderation', href: '/public/course-moderation', isOpen: false,
-    //   isHide: false,
-    //   icon: Courses,
-    // },
-    {
-      isHeader: true,
-      title: "Assignments",
-    },
-    {
-      title: 'All Assignments', href: '/public/all-assignments', isOpen: false,
-      isHide: false,
-      icon: Assignments,
-    },
-    {
-      title: 'My Attempts', href: '/public/my-attempts', isOpen: false,
-      isHide: false,
-      icon: Assignments,
-    },
-    {
-      title: 'Recommendation', href: '/public/assignment-recommend', isOpen: false,
-      isHide: false,
-      icon: Courses,
-    },
-    {
-      isHeader: true,
-      title: "Announcement",
-    },
-    {
-      title: 'All Announcements', href: '/public/announcement', isOpen: false,
-      isHide: false,
-      icon: Announcement,
-    },
+  //   },
+  //   {
+  //     isHeader: true,
+  //     title: "Courses",
+  //   },
+  //   {
+  //     title: 'Courses', href: '/public/course-categories', isOpen: false,
+  //     isHide: false,
+  //     icon: Courses,
+  //   },
+  //   {
+  //     title: 'My Learning', href: '/public/course', isOpen: false,
+  //     isHide: false,
+  //     icon: Mycourses,
+  //   },
+  //   {
+  //     title: 'Course Recommend', href: '/public/course-recommend', isOpen: false,
+  //     isHide: false,
+  //     icon: Courses,
+  //   },
+  //   // {
+  //   //   title: ' Course Moderation', href: '/public/course-moderation', isOpen: false,
+  //   //   isHide: false,
+  //   //   icon: Courses,
+  //   // },
+  //   {
+  //     isHeader: true,
+  //     title: "Assignments",
+  //   },
+  //   {
+  //     title: 'All Assignments', href: '/public/all-assignments', isOpen: false,
+  //     isHide: false,
+  //     icon: Assignments,
+  //   },
+  //   {
+  //     title: 'My Attempts', href: '/public/my-attempts', isOpen: false,
+  //     isHide: false,
+  //     icon: Assignments,
+  //   },
+  //   {
+  //     title: 'Recommendation', href: '/public/assignment-recommend', isOpen: false,
+  //     isHide: false,
+  //     icon: Courses,
+  //   },
+  //   {
+  //     isHeader: true,
+  //     title: "Announcement",
+  //   },
+  //   {
+  //     title: 'All Announcements', href: '/public/announcement', isOpen: false,
+  //     isHide: false,
+  //     icon: Announcement,
+  //   },
 
-    {
-      title: 'My Certificates', href: '/public/my-certificate', isOpen: false,
-      isHide: false,
-      icon: Certificate,
-    },
-  ],
-  MANAGER: [
-    {
-      isHeader: true,
-      title: "Dashboard",
-    },
-    {
-      title: 'Dashboard',
-      isOpen: false,
-      isHide: false,
-      icon: Lmsdashboard,
-      child: [
+  //   {
+  //     title: 'My Certificates', href: '/public/my-certificate', isOpen: false,
+  //     isHide: false,
+  //     icon: Certificate,
+  //   },
+  // ],
+  // MANAGER: [
+  //   {
+  //     isHeader: true,
+  //     title: "Dashboard",
+  //   },
+  //   {
+  //     title: 'Dashboard',
+  //     isOpen: false,
+  //     isHide: false,
+  //     icon: Lmsdashboard,
+  //     child: [
 
-        {
-          title: "Manager",
-          icon: Google,
-          href: '/manager/manager-dashboard'
-        },
-        {
-          title: "User",
-          icon: Pointer,
-          href: '/public/user-dashboard'
-        },
-        {
-          title: "Course Proposals",
-          icon: Pointer,
-          href: '/public/course-proposals'
-        },
-        {
-          title: "Propose Course",
-          icon: Pointer,
-          href: '/public/propose-course'
-        },
-      ],
+  //       {
+  //         title: "Manager",
+  //         icon: Google,
+  //         href: '/manager/manager-dashboard'
+  //       },
+  //       {
+  //         title: "User",
+  //         icon: Pointer,
+  //         href: '/public/user-dashboard'
+  //       },
+  //       {
+  //         title: "Course Proposals",
+  //         icon: Pointer,
+  //         href: '/public/course-proposals'
+  //       },
+  //       {
+  //         title: "Propose Course",
+  //         icon: Pointer,
+  //         href: '/public/propose-course'
+  //       },
+  //     ],
 
-    },
-    {
-      isHeader: true,
-      title: "Courses",
-    },
-    {
-      title: 'Courses', href: '/public/course-categories', isOpen: false,
-      isHide: false,
-      icon: Courses,
-    },
-    {
-      title: 'My Learning', href: '/public/course', isOpen: false,
-      isHide: false,
-      icon: Mycourses,
-    },
-    {
-      title: 'Recommendation', href: '/public/course-recommend', isOpen: false,
-      isHide: false,
-      icon: Courses,
-    },
-    // {
-    //   title: ' Course Moderation', href: '/public/course-moderation', isOpen: false,
-    //   isHide: false,
-    //   icon: Courses,
-    // },
-    {
-      isHeader: true,
-      title: "Assignments",
-    },
-    {
-      title: 'All Assignments', href: '/public/all-assignments', isOpen: false,
-      isHide: false,
-      icon: Assignments,
-    },
-    {
-      title: 'My Attempts', href: '/public/my-attempts', isOpen: false,
-      isHide: false,
-      icon: Assignments,
-    },
-    {
-      title: 'Recommendation', href: '/public/assignment-recommend', isOpen: false,
-      isHide: false,
-      icon: Courses,
-    },
-    {
-      isHeader: true,
-      title: "Announcement",
-    },
-    {
-      title: 'All Announcements', href: '/public/announcement', isOpen: false,
-      isHide: false,
-      icon: Announcement,
-    },
-    {
-      title: 'My Certificates', href: '/public/my-certificate', isOpen: false,
-      isHide: false,
-      icon: Certificate,
-    },
-    {
-      isHeader: true,
-      title: "Manage Courses",
-    },
-    {
-      title: 'Courses', href: '/admin/course', isOpen: false,
-      isHide: false,
-      icon: Courses,
-    },
-    {
-      title: 'Course Category', href: '/admin/course-categories', isOpen: false,
-      isHide: false,
-      icon: Courses,
-    },
-    {
-      title: 'Recommended Courses', href: '/admin/course-recommend', isOpen: false,
-      isHide: false,
-      icon: Courses,
-    },
-  ],
-  INSTRUCTOR: [
-    {
-      isHeader: true,
-      title: "Dashboard",
-    },
-    {
-      title: 'Dashboard',
-      isOpen: false,
-      isHide: false,
-      icon: Lmsdashboard,
-      child: [
+  //   },
+  //   {
+  //     isHeader: true,
+  //     title: "Courses",
+  //   },
+  //   {
+  //     title: 'Courses', href: '/public/course-categories', isOpen: false,
+  //     isHide: false,
+  //     icon: Courses,
+  //   },
+  //   {
+  //     title: 'My Learning', href: '/public/course', isOpen: false,
+  //     isHide: false,
+  //     icon: Mycourses,
+  //   },
+  //   {
+  //     title: 'Recommendation', href: '/public/course-recommend', isOpen: false,
+  //     isHide: false,
+  //     icon: Courses,
+  //   },
+  //   // {
+  //   //   title: ' Course Moderation', href: '/public/course-moderation', isOpen: false,
+  //   //   isHide: false,
+  //   //   icon: Courses,
+  //   // },
+  //   {
+  //     isHeader: true,
+  //     title: "Assignments",
+  //   },
+  //   {
+  //     title: 'All Assignments', href: '/public/all-assignments', isOpen: false,
+  //     isHide: false,
+  //     icon: Assignments,
+  //   },
+  //   {
+  //     title: 'My Attempts', href: '/public/my-attempts', isOpen: false,
+  //     isHide: false,
+  //     icon: Assignments,
+  //   },
+  //   {
+  //     title: 'Recommendation', href: '/public/assignment-recommend', isOpen: false,
+  //     isHide: false,
+  //     icon: Courses,
+  //   },
+  //   {
+  //     isHeader: true,
+  //     title: "Announcement",
+  //   },
+  //   {
+  //     title: 'All Announcements', href: '/public/announcement', isOpen: false,
+  //     isHide: false,
+  //     icon: Announcement,
+  //   },
+  //   {
+  //     title: 'My Certificates', href: '/public/my-certificate', isOpen: false,
+  //     isHide: false,
+  //     icon: Certificate,
+  //   },
+  //   {
+  //     isHeader: true,
+  //     title: "Manage Courses",
+  //   },
+  //   {
+  //     title: 'Courses', href: '/admin/course', isOpen: false,
+  //     isHide: false,
+  //     icon: Courses,
+  //   },
+  //   {
+  //     title: 'Course Category', href: '/admin/course-categories', isOpen: false,
+  //     isHide: false,
+  //     icon: Courses,
+  //   },
+  //   {
+  //     title: 'Recommended Courses', href: '/admin/course-recommend', isOpen: false,
+  //     isHide: false,
+  //     icon: Courses,
+  //   },
+  // ],
+  // INSTRUCTOR: [
+  //   {
+  //     isHeader: true,
+  //     title: "Dashboard",
+  //   },
+  //   {
+  //     title: 'Dashboard',
+  //     isOpen: false,
+  //     isHide: false,
+  //     icon: Lmsdashboard,
+  //     child: [
 
-        {
-          title: "trainer",
-          icon: Google,
-          href: '/trainer/trainer-dashboard'
-        },
-        {
-          title: "User",
-          icon: Pointer,
-          href: '/public/user-dashboard'
-        },
-        {
-          title: "Course Proposals",
-          icon: Pointer,
-          href: '/public/course-proposals'
-        },
-        {
-          title: "Propose Course",
-          icon: Pointer,
-          href: '/public/propose-course'
-        },
-      ],
+  //       {
+  //         title: "trainer",
+  //         icon: Google,
+  //         href: '/trainer/trainer-dashboard'
+  //       },
+  //       {
+  //         title: "User",
+  //         icon: Pointer,
+  //         href: '/public/user-dashboard'
+  //       },
+  //       {
+  //         title: "Course Proposals",
+  //         icon: Pointer,
+  //         href: '/public/course-proposals'
+  //       },
+  //       {
+  //         title: "Propose Course",
+  //         icon: Pointer,
+  //         href: '/public/propose-course'
+  //       },
+  //     ],
 
-    },
-    {
-      isHeader: true,
-      title: "Courses",
-    },
-    {
-      title: 'Courses', href: '/public/course-categories', isOpen: false,
-      isHide: false,
-      icon: Courses,
-    },
-    {
-      title: 'My Learning', href: '/public/course', isOpen: false,
-      isHide: false,
-      icon: Mycourses,
-    },
-    {
-      title: 'Recommendation', href: '/public/course-recommend', isOpen: false,
-      isHide: false,
-      icon: Courses,
-    },
-    // {
-    //   title: ' Course Moderation', href: '/public/course-moderation', isOpen: false,
-    //   isHide: false,
-    //   icon: Courses,
-    // },
-    {
-      isHeader: true,
-      title: "Assignments",
-    },
-    {
-      title: 'All Assignments', href: '/public/all-assignments', isOpen: false,
-      isHide: false,
-      icon: Assignments,
-    },
-    {
-      title: 'My Attempts', href: '/public/my-attempts', isOpen: false,
-      isHide: false,
-      icon: Assignments,
-    },
-    {
-      title: 'Recommendation', href: '/public/assignment-recommend', isOpen: false,
-      isHide: false,
-      icon: Courses,
-    },
-    {
-      isHeader: true,
-      title: "Announcement",
-    },
-    {
-      title: 'All Announcements', href: '/public/announcement', isOpen: false,
-      isHide: false,
-      icon: Announcement,
-    },
-    {
-      title: 'My Certificates', href: '/public/my-certificate', isOpen: false,
-      isHide: false,
-      icon: Certificate,
-    },
-    {
-      isHeader: true,
-      title: "Manage Courses",
-    },
-    {
-      title: 'Courses', href: '/admin/course', isOpen: false,
-      isHide: false,
-      icon: Courses,
-    },
-    {
-      title: 'Course Category', href: '/admin/course-categories', isOpen: false,
-      isHide: false,
-      icon: Courses,
-    },
-    {
-      title: 'Recommended Courses', href: '/admin/course-recommend', isOpen: false,
-      isHide: false,
-      icon: Courses,
-    },
-    {
-      isHeader: true,
-      title: "Manage Assignments",
-    },
-    {
-      title: 'Assignments', href: '/admin/assignment', isOpen: false,
-      isHide: false,
-      icon: Assignments,
-    },
-    {
-      title: 'Question Banks', href: '/admin/question-banks', isOpen: false,
-      isHide: false,
-      icon: Questionbank,
-    },
-    {
-      title: 'Recommend Assignment', href: '/admin/assignment-recommend', isOpen: false,
-      isHide: false,
-      icon: Courses,
-    },
-    {
-      title: 'Announcement', href: '/admin/announcement', isOpen: false,
-      isHide: false,
-      icon: Announcement,
-    },
-    {
-      title: 'Certificate', href: '/admin/certificate', isOpen: false,
-      isHide: false,
-      icon: Certificate,
-    },
-  ]
+  //   },
+  //   {
+  //     isHeader: true,
+  //     title: "Courses",
+  //   },
+  //   {
+  //     title: 'Courses', href: '/public/course-categories', isOpen: false,
+  //     isHide: false,
+  //     icon: Courses,
+  //   },
+  //   {
+  //     title: 'My Learning', href: '/public/course', isOpen: false,
+  //     isHide: false,
+  //     icon: Mycourses,
+  //   },
+  //   {
+  //     title: 'Recommendation', href: '/public/course-recommend', isOpen: false,
+  //     isHide: false,
+  //     icon: Courses,
+  //   },
+  //   // {
+  //   //   title: ' Course Moderation', href: '/public/course-moderation', isOpen: false,
+  //   //   isHide: false,
+  //   //   icon: Courses,
+  //   // },
+  //   {
+  //     isHeader: true,
+  //     title: "Assignments",
+  //   },
+  //   {
+  //     title: 'All Assignments', href: '/public/all-assignments', isOpen: false,
+  //     isHide: false,
+  //     icon: Assignments,
+  //   },
+  //   {
+  //     title: 'My Attempts', href: '/public/my-attempts', isOpen: false,
+  //     isHide: false,
+  //     icon: Assignments,
+  //   },
+  //   {
+  //     title: 'Recommendation', href: '/public/assignment-recommend', isOpen: false,
+  //     isHide: false,
+  //     icon: Courses,
+  //   },
+  //   {
+  //     isHeader: true,
+  //     title: "Announcement",
+  //   },
+  //   {
+  //     title: 'All Announcements', href: '/public/announcement', isOpen: false,
+  //     isHide: false,
+  //     icon: Announcement,
+  //   },
+  //   {
+  //     title: 'My Certificates', href: '/public/my-certificate', isOpen: false,
+  //     isHide: false,
+  //     icon: Certificate,
+  //   },
+  //   {
+  //     isHeader: true,
+  //     title: "Manage Courses",
+  //   },
+  //   {
+  //     title: 'Courses', href: '/admin/course', isOpen: false,
+  //     isHide: false,
+  //     icon: Courses,
+  //   },
+  //   {
+  //     title: 'Course Category', href: '/admin/course-categories', isOpen: false,
+  //     isHide: false,
+  //     icon: Courses,
+  //   },
+  //   {
+  //     title: 'Recommended Courses', href: '/admin/course-recommend', isOpen: false,
+  //     isHide: false,
+  //     icon: Courses,
+  //   },
+  //   {
+  //     isHeader: true,
+  //     title: "Manage Assignments",
+  //   },
+  //   {
+  //     title: 'Assignments', href: '/admin/assignment', isOpen: false,
+  //     isHide: false,
+  //     icon: Assignments,
+  //   },
+  //   {
+  //     title: 'Question Banks', href: '/admin/question-banks', isOpen: false,
+  //     isHide: false,
+  //     icon: Questionbank,
+  //   },
+  //   {
+  //     title: 'Recommend Assignment', href: '/admin/assignment-recommend', isOpen: false,
+  //     isHide: false,
+  //     icon: Courses,
+  //   },
+  //   {
+  //     title: 'Announcement', href: '/admin/announcement', isOpen: false,
+  //     isHide: false,
+  //     icon: Announcement,
+  //   },
+  //   {
+  //     title: 'Certificate', href: '/admin/certificate', isOpen: false,
+  //     isHide: false,
+  //     icon: Certificate,
+  //   },
+  // ]
 }
 
 export const generateNavBar = (roleName) => {

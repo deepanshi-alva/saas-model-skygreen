@@ -83,29 +83,29 @@ const AuthProvider = ({ children }) => {
     if (!hasRedirected) {
       localStorage.setItem("roleRedirected", "true");
       console.log("roleRedirected set to:", localStorage.getItem("roleRedirected"));
-      if (role.name === "ADMIN") {
+      if (role.name === "SUPER_ADMIN") {
         if (!pathname.startsWith("/admin")) {
           router.push("/admin/dashboard");
         }
       }
-      else if (role.name === "INSTRUCTOR") {
-        if (!pathname.startsWith("/trainer")) {
-          router.push("/trainer/trainer-dashboard");
-        }
-      } else if (role.name === "EMPLOYEE") {
-        if (!pathname.startsWith("/public")) {
-          router.push("/public/user-dashboard");
-        }
-        // } else if (role.name === "Authenticated") {
-        //   if (!pathname.startsWith("/public")) {
-        //     router.push("/public/user-dashboard");
-        //   }
-      }
-      else if (role.name === "MANAGER") {
-        if (!pathname.startsWith("/manager")) {
-          router.push("/manager/manager-dashboard");
-        }
-      }
+      // else if (role.name === "INSTRUCTOR") {
+      //   if (!pathname.startsWith("/trainer")) {
+      //     router.push("/trainer/trainer-dashboard");
+      //   }
+      // } else if (role.name === "EMPLOYEE") {
+      //   if (!pathname.startsWith("/public")) {
+      //     router.push("/public/user-dashboard");
+      //   }
+      //   // } else if (role.name === "Authenticated") {
+      //   //   if (!pathname.startsWith("/public")) {
+      //   //     router.push("/public/user-dashboard");
+      //   //   }
+      // }
+      // else if (role.name === "MANAGER") {
+      //   if (!pathname.startsWith("/manager")) {
+      //     router.push("/manager/manager-dashboard");
+      //   }
+      // }
     }
   };
 
