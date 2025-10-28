@@ -64,10 +64,10 @@ const Header = ({ handleOpenSearch, roleType }) => {
               sidebarType={sidebarType}
             />
           </div>
-          {location.endsWith("/dashboard") && <AdminPage />}
-          {location.endsWith("/user-dashboard") && <UserPage />}
+          {/* {location.endsWith("/dashboard") && <AdminPage />} */}
+          {/* {location.endsWith("/user-dashboard") && <UserPage />}
           {location.endsWith("/manager-dashboard") && <ManagerPage />}
-          {location.endsWith("/trainer-dashboard") && <ManagerPage />}
+          {location.endsWith("/trainer-dashboard") && <ManagerPage />} */}
         </div>
       </div>
     </header>
@@ -76,106 +76,106 @@ const Header = ({ handleOpenSearch, roleType }) => {
 
 export default Header;
 
-const UserPage = () => {
-  const user = useAppSelector((state) => state.user);
-  const [loading, setLoading] = useState(false);
-  const [course_details, setCourseDetails] = useState({
-    electiveCompletionPercentage: 0,
-    completedElectiveCount: 0,
-    electiveCount: 0,
-    completedMandatoryCount: 0,
-    completedMandatoryCount: 0,
-    mandatoryCompletionPercentage: 0,
-    mandatoryCount: 0,
-  });
-// In your page component, add this effect:
-useEffect(() => {
-  // Force window resize event to trigger chart redraw
-  const timer = setTimeout(() => {
-    window.dispatchEvent(new Event('resize'));
-  }, 100);
+// const UserPage = () => {
+//   const user = useAppSelector((state) => state.user);
+//   const [loading, setLoading] = useState(false);
+//   const [course_details, setCourseDetails] = useState({
+//     electiveCompletionPercentage: 0,
+//     completedElectiveCount: 0,
+//     electiveCount: 0,
+//     completedMandatoryCount: 0,
+//     completedMandatoryCount: 0,
+//     mandatoryCompletionPercentage: 0,
+//     mandatoryCount: 0,
+//   });
+// // In your page component, add this effect:
+// useEffect(() => {
+//   // Force window resize event to trigger chart redraw
+//   const timer = setTimeout(() => {
+//     window.dispatchEvent(new Event('resize'));
+//   }, 100);
   
-  return () => clearTimeout(timer);
-}, [course_details]);
+//   return () => clearTimeout(timer);
+// }, [course_details]);
 
-  const getUserDashBoard = async () => {
-    setLoading(true);
-    try {
-      const { data } = await axiosInstance({
-        url: `/api/user-dashboard/user-data?userId=${user?.id}`,
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      setCourseDetails(data);
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+//   const getUserDashBoard = async () => {
+//     setLoading(true);
+//     try {
+//       const { data } = await axiosInstance({
+//         url: `/api/user-dashboard/user-data?userId=${user?.id}`,
+//         method: "GET",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//       });
+//       setCourseDetails(data);
+//       setLoading(false);
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   };
 
-  useEffect(() => {
-    getUserDashBoard();
-  }, [user?.id]);
+//   useEffect(() => {
+//     getUserDashBoard();
+//   }, [user?.id]);
 
-  return (
-    <div className="grid grid-cols-12  gap-6 pt-6 rounded-lg blueBackground">
-      <div className="col-span-12 lg:col-span-4 welcomeBlock">
-        <WelcomeBlock />
-      </div>
-      <div className="col-span-12 lg:col-span-4">
-        <Card className="lightblue-bg">
-          <CardHeader className="mb-0">
-            <h2>Learning Progress</h2>
-          </CardHeader>
+//   return (
+//     <div className="grid grid-cols-12  gap-6 pt-6 rounded-lg blueBackground">
+//       <div className="col-span-12 lg:col-span-4 welcomeBlock">
+//         <WelcomeBlock />
+//       </div>
+//       <div className="col-span-12 lg:col-span-4">
+//         <Card className="lightblue-bg">
+//           <CardHeader className="mb-0">
+//             <h2>Learning Progress</h2>
+//           </CardHeader>
 
-          <CardContent className="grid grid-cols-12 gap-0 pb-2 p-0">
-            <div className="flex flex-wrap col-span-12 lg:col-span-6">
-              <div className="flex-1 flex items-center flex-wrap 2xl:flex-nowrap md:pr-4 2xl:pr-0 text-center 2xl:text-left md:pb-4 md:pl-4 2xl:py-0 mandotryChartHome">
-                <div className="w-32 h-32">
-                  <GradiantRadialBar
-                    course_details={
-                      course_details?.mandatoryCompletionPercentage
-                    }
-                  />
-                </div>
-                <div className="font-semibold text-sm">
-                  Mandatory Courses {course_details?.completedMandatoryCount}/
-                  {course_details.mandatoryCount}
-                </div>
-              </div>
-            </div>
+//           <CardContent className="grid grid-cols-12 gap-0 pb-2 p-0">
+//             <div className="flex flex-wrap col-span-12 lg:col-span-6">
+//               <div className="flex-1 flex items-center flex-wrap 2xl:flex-nowrap md:pr-4 2xl:pr-0 text-center 2xl:text-left md:pb-4 md:pl-4 2xl:py-0 mandotryChartHome">
+//                 <div className="w-32 h-32">
+//                   <GradiantRadialBar
+//                     course_details={
+//                       course_details?.mandatoryCompletionPercentage
+//                     }
+//                   />
+//                 </div>
+//                 <div className="font-semibold text-sm">
+//                   Mandatory Courses {course_details?.completedMandatoryCount}/
+//                   {course_details.mandatoryCount}
+//                 </div>
+//               </div>
+//             </div>
 
-            <div className="flex flex-wrap col-span-12 lg:col-span-6">
-              <div className="flex-1 flex items-center flex-wrap 2xl:flex-nowrap md:pr-4 2xl:pr-0 md:text-center 2xl:text-left md:pb-4 2xl:py-0 electiveChartHome">
-                <div className="w-32 h-32">
-                  {" "}
-                  <BlueRadialBar
-                    course_details={
-                      course_details?.electiveCompletionPercentage
-                    }
-                  />
-                </div>
-                <div className="font-semibold text-sm">
-                  Elective Courses {course_details.completedElectiveCount}/
-                  {course_details.electiveCount}
-                </div>
-              </div>
-            </div>
+//             <div className="flex flex-wrap col-span-12 lg:col-span-6">
+//               <div className="flex-1 flex items-center flex-wrap 2xl:flex-nowrap md:pr-4 2xl:pr-0 md:text-center 2xl:text-left md:pb-4 2xl:py-0 electiveChartHome">
+//                 <div className="w-32 h-32">
+//                   {" "}
+//                   <BlueRadialBar
+//                     course_details={
+//                       course_details?.electiveCompletionPercentage
+//                     }
+//                   />
+//                 </div>
+//                 <div className="font-semibold text-sm">
+//                   Elective Courses {course_details.completedElectiveCount}/
+//                   {course_details.electiveCount}
+//                 </div>
+//               </div>
+//             </div>
 
-            {/* <div className="col-span-12 lg:col-span-6">
-            <BlueRadialBar course_details={course_details}/>
-          </div> */}
-          </CardContent>
-        </Card>
-      </div>
-      <div className="col-span-12 lg:col-span-4">
-        <ReportsSnapshot />
-      </div>
-    </div>
-  );
-};
+//             {/* <div className="col-span-12 lg:col-span-6">
+//             <BlueRadialBar course_details={course_details}/>
+//           </div> */}
+//           </CardContent>
+//         </Card>
+//       </div>
+//       <div className="col-span-12 lg:col-span-4">
+//         <ReportsSnapshot />
+//       </div>
+//     </div>
+//   );
+// };
 const AdminPage = () => {
   const [counts, setCounts] = useState({
     userCount: 0,
@@ -351,187 +351,7 @@ const AdminPage = () => {
     </div>
   );
 };
-const ManagerPage = () => {
-  const [counts, setCounts] = useState({
-    userCount: 0,
-    assessmentCount: 0,
-    trainerCount: 0,
-    enrolledCount: 0,
-    publishedCourseCount: 0,
-    inactiveUser: 0,
-    electiveParticipationCount: 0,
-    mandatoryParticipationCount: 0,
-    overallParticipationPerc: 0,
-    mandatoryPercentage: 0,
-    electivePercentage: 0,
-    avgWatchTimePerMonth: 0,
-  });
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const cardMappings = [
-    {
-      key: "userCount",
-      title: "Registered Users",
-      color: "info",
-      icon: "mdiusers",
-    },
-    {
-      key: "enrolledCount",
-      title: "Enrolled in Courses",
-      color: "info",
-      icon: "mdiusers",
-    },
-    {
-      key: "trainerCount",
-      title: "Registered Trainers",
-      color: "primary",
-      icon: "usertie",
-    },
-    {
-      key: "inactiveUser",
-      title: "Inactive Users",
-      color: "destructive",
-      icon: "inactiveusers",
-    },
-    {
-      key: "publishedCourseCount",
-      title: "Published Courses",
-      color: "info",
-      icon: "publishcourses",
-    },
-    {
-      key: "assessmentCount",
-      title: "Published Assessments",
-      color: "info",
-      icon: "assessments",
-    },
-    {
-      key: "avgWatchTimePerMonth",
-      title: "Average Time Spent (Hrs/Month)",
-      color: "info",
-      icon: "timespent",
-    },
-    {
-      key: "enrolledCount",
-      title: "Overall Participation",
-      color: "success",
-      cardColor: "bg-green-100",
-      icon: "Session",
-      hasPerc: true,
-      percentageKey: "overallParticipationPerc",
-    },
-    {
-      key: "mandatoryParticipationCount",
-      title: "Mandatory Course Participation",
-      color: "primary",
-      cardColor: "bg-orange-100",
-      icon: "Session",
-      hasPerc: true,
-      percentageKey: "mandatoryPercentage",
-    },
-
-    {
-      key: "electiveParticipationCount",
-      title: "Elective Course Participation",
-      color: "info",
-      cardColor: "bg-cyan-100",
-      icon: "Increase",
-      hasPerc: true,
-      percentageKey: "electivePercentage",
-    },
-  ];
-  useEffect(() => {
-    const fetchDashboardCounts = async () => {
-      setLoading(true);
-      setError(null);
-
-      try {
-        const response = await axiosInstance.get(
-          `/api/dashboard/counts?type=manager`
-        );
-        setCounts(response?.data?.counts);
-      } catch (err) {
-        setError(err.response?.data || err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchDashboardCounts();
-  }, []);
-  console.log("cards", counts);
-
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 pt-5">
-      {cardMappings.map((card, index) => (
-        <Card
-          key={`dynamic-card-${index}`}
-          className={cn(
-            "w-full h-[140px] rounded-lg shadow-sm border border-gray-200 flex flex-col justify-between",
-            card?.cardColor ? card.cardColor : "bg-white"
-          )}
-        >
-          <CardContent className="flex-1 p-3 flex flex-col">
-            <div className="flex items-center justify-between mb-2 p-2">
-              {/* Value Section */}
-              {/* <div className="text-3xl font-bold">
-                {counts ? counts?.[card.key] : 0}
-              </div> */}
-              <div className="text-3xl font-bold">
-                {counts
-                  ? Number.isInteger(counts?.[card.key])
-                    ? counts?.[card.key]
-                    : parseFloat(counts?.[card.key] || 0).toFixed(1)
-                  : "0.00"}
-              </div>
-
-              {/* Icon or Progress Section */}
-              {card?.hasPerc === true ? (
-                <div className="flex justify-center items-center h-12 w-12">
-                  <CircularProgress
-                    value={
-                      counts?.[card.percentageKey]
-                        ? Math.round(counts[card.percentageKey])
-                        : 0
-                    }
-                    color={card.color}
-                    showValue
-                  />
-                </div>
-              ) : (
-                <span
-                  className={cn(
-                    "flex h-10 w-10 justify-center items-center bg-default-100 rounded-full p-1",
-                    {
-                      "bg-primary bg-opacity-10 text-primary":
-                        card.color === "primary",
-                      "bg-info bg-opacity-10 text-info": card.color === "info",
-                      "bg-warning bg-opacity-10 text-warning":
-                        card.color === "warning",
-                      "bg-destructive bg-opacity-10 text-destructive":
-                        card.color === "destructive",
-                    }
-                  )}
-                >
-                  {React.createElement(require("@/components/svg")[card.icon], {
-                    className: "h-6 w-6",
-                  })}
-                </span>
-              )}
-            </div>
-
-            {/* Title Section */}
-            <div className="text-sm font-medium mt-1 text-ellipsis overflow-hidden max-w-[130px]">
-              {card.title}
-            </div>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  );
-};
-//   const { assignmentId } = useParams();
-//   const [assignment, setAssignment] = useState();
+// const ManagerPage = () => {
 //   const [counts, setCounts] = useState({
 //     userCount: 0,
 //     assessmentCount: 0,
@@ -544,18 +364,53 @@ const ManagerPage = () => {
 //     overallParticipationPerc: 0,
 //     mandatoryPercentage: 0,
 //     electivePercentage: 0,
-//     avgWatchTimePerMonth: 0
+//     avgWatchTimePerMonth: 0,
 //   });
 //   const [loading, setLoading] = useState(false);
 //   const [error, setError] = useState(null);
 //   const cardMappings = [
-//     { key: "userCount", title: "Registered Users", color: "info", icon: "mdiusers" },
-//     { key: "enrolledCount", title: "Enrolled in Courses", color: "info", icon: "mdiusers" },
-//     { key: "trainerCount", title: "Registered Trainers", color: "primary", icon: "usertie" },
-//     { key: "inactiveUser", title: "Inactive Users", color: "destructive", icon: "inactiveusers" },
-//     { key: "publishedCourseCount", title: "Published Courses", color: "info", icon: "publishcourses" },
-//     { key: "assessmentCount", title: "Published Assessments", color: "info", icon: "assessments" },
-//     { key: "avgWatchTimePerMonth", title: "Average Time Spent (Hours/Spent)", color: "info", icon: "assessments" },
+//     {
+//       key: "userCount",
+//       title: "Registered Users",
+//       color: "info",
+//       icon: "mdiusers",
+//     },
+//     {
+//       key: "enrolledCount",
+//       title: "Enrolled in Courses",
+//       color: "info",
+//       icon: "mdiusers",
+//     },
+//     {
+//       key: "trainerCount",
+//       title: "Registered Trainers",
+//       color: "primary",
+//       icon: "usertie",
+//     },
+//     {
+//       key: "inactiveUser",
+//       title: "Inactive Users",
+//       color: "destructive",
+//       icon: "inactiveusers",
+//     },
+//     {
+//       key: "publishedCourseCount",
+//       title: "Published Courses",
+//       color: "info",
+//       icon: "publishcourses",
+//     },
+//     {
+//       key: "assessmentCount",
+//       title: "Published Assessments",
+//       color: "info",
+//       icon: "assessments",
+//     },
+//     {
+//       key: "avgWatchTimePerMonth",
+//       title: "Average Time Spent (Hrs/Month)",
+//       color: "info",
+//       icon: "timespent",
+//     },
 //     {
 //       key: "enrolledCount",
 //       title: "Overall Participation",
@@ -563,7 +418,7 @@ const ManagerPage = () => {
 //       cardColor: "bg-green-100",
 //       icon: "Session",
 //       hasPerc: true,
-//       percentageKey: "overallParticipationPerc"
+//       percentageKey: "overallParticipationPerc",
 //     },
 //     {
 //       key: "mandatoryParticipationCount",
@@ -572,7 +427,7 @@ const ManagerPage = () => {
 //       cardColor: "bg-orange-100",
 //       icon: "Session",
 //       hasPerc: true,
-//       percentageKey: "mandatoryPercentage"
+//       percentageKey: "mandatoryPercentage",
 //     },
 
 //     {
@@ -582,75 +437,30 @@ const ManagerPage = () => {
 //       cardColor: "bg-cyan-100",
 //       icon: "Increase",
 //       hasPerc: true,
-//       percentageKey: "electivePercentage"
+//       percentageKey: "electivePercentage",
 //     },
-
 //   ];
-//   async function fetchAssignment() {
-//     try {
-
-//       setAssignment(data.data);
-//     } catch (error) {
-//       console.log(error)
-//     }
-//   }
-//   async function fetchAttempts() {
-//     try {
-
-//       setAssignment(data.data);
-//     } catch (error) {
-//       console.log(error)
-//     }
-//   }
 //   useEffect(() => {
-//     const fetchStats = async () => {
+//     const fetchDashboardCounts = async () => {
 //       setLoading(true);
 //       setError(null);
 
 //       try {
-//         const { data: assigment } = await axiosInstance({
-//           url: `/api/assignments/${assignmentId}?populate=*`,
-//           method: 'get',
-//         });
-
-//         const { data: attempt } = await axiosInstance({
-//           url: `/api/attempt-contents?filters[assignment][documentId]=${assignmentId}?populate=*`,
-//           method: 'get',
-//         });
-//         const totalattempts = new Set(attempt.data.map(item => item.user[0].id)).size;
-//         const min_score = assigment.data.min_score;
-//         const uniqueUsers = new Set();
-//         let passed = 0;
-//         attempt?.data?.forEach(item => {
-//           if (item.user.length > 0) {
-//             const userId = item.user[0].id; // Assuming one user per object
-
-//             if (!uniqueUsers.has(userId) && item.auto_graded_marks >= min_score) {
-//               uniqueUsers.add(userId);
-//               passed++;
-//             }
-//           }
-//         });
-//         const failed = totalattempts - passed;
-//         // const passed = ;
-
-//         // const totalattempts = Array.from(new Map(data.map(item => [item.id, item])).values());
-//         setCounts({
-//           totalSubmissions:totalattempts,
-//           passed,
-//           failed,
-//         });
+//         const response = await axiosInstance.get(
+//           `/api/dashboard/counts?type=manager`
+//         );
+//         setCounts(response?.data?.counts);
 //       } catch (err) {
 //         setError(err.response?.data || err.message);
 //       } finally {
 //         setLoading(false);
 //       }
 //     };
-//     fetchAssignment();
-//     fetchStats();
+
+//     fetchDashboardCounts();
 //   }, []);
-//   console.log('cards', counts);
-//   console.log('path', useParams())
+//   console.log("cards", counts);
+
 //   return (
 //     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 pt-5">
 //       {cardMappings.map((card, index) => (
@@ -664,15 +474,26 @@ const ManagerPage = () => {
 //           <CardContent className="flex-1 p-3 flex flex-col">
 //             <div className="flex items-center justify-between mb-2 p-2">
 //               {/* Value Section */}
-//               <div className="text-3xl font-bold">
+//               {/* <div className="text-3xl font-bold">
 //                 {counts ? counts?.[card.key] : 0}
+//               </div> */}
+//               <div className="text-3xl font-bold">
+//                 {counts
+//                   ? Number.isInteger(counts?.[card.key])
+//                     ? counts?.[card.key]
+//                     : parseFloat(counts?.[card.key] || 0).toFixed(1)
+//                   : "0.00"}
 //               </div>
 
 //               {/* Icon or Progress Section */}
 //               {card?.hasPerc === true ? (
 //                 <div className="flex justify-center items-center h-12 w-12">
 //                   <CircularProgress
-//                     value={counts?.[card.percentageKey] ? Math.round(counts[card.percentageKey]) : 0}
+//                     value={
+//                       counts?.[card.percentageKey]
+//                         ? Math.round(counts[card.percentageKey])
+//                         : 0
+//                     }
 //                     color={card.color}
 //                     showValue
 //                   />
@@ -682,15 +503,18 @@ const ManagerPage = () => {
 //                   className={cn(
 //                     "flex h-10 w-10 justify-center items-center bg-default-100 rounded-full p-1",
 //                     {
-//                       "bg-primary bg-opacity-10 text-primary": card.color === "primary",
+//                       "bg-primary bg-opacity-10 text-primary":
+//                         card.color === "primary",
 //                       "bg-info bg-opacity-10 text-info": card.color === "info",
-//                       "bg-warning bg-opacity-10 text-warning": card.color === "warning",
-//                       "bg-destructive bg-opacity-10 text-destructive": card.color === "destructive",
+//                       "bg-warning bg-opacity-10 text-warning":
+//                         card.color === "warning",
+//                       "bg-destructive bg-opacity-10 text-destructive":
+//                         card.color === "destructive",
 //                     }
 //                   )}
 //                 >
 //                   {React.createElement(require("@/components/svg")[card.icon], {
-//                     className: "h-6 w-6"
+//                     className: "h-6 w-6",
 //                   })}
 //                 </span>
 //               )}
@@ -704,6 +528,5 @@ const ManagerPage = () => {
 //         </Card>
 //       ))}
 //     </div>
-
 //   );
 // };

@@ -23,7 +23,7 @@ const PopoverSidebar = ({ trans }) => {
   const [menus, setMenus] = useState([])
   const [activeSubmenu, setActiveSubmenu] = useState(null);
   const [activeMultiMenu, setMultiMenu] = useState(null);
-  const [announcementsData, setAnnouncementsData] = useState([]);
+  // const [announcementsData, setAnnouncementsData] = useState([]);
 
   const toggleSubmenu = (i) => {
     if (activeSubmenu === i) {
@@ -117,16 +117,16 @@ const PopoverSidebar = ({ trans }) => {
       const nav = generateNavBar(user?.role?.name)
       setMenus(nav)
     }
-    getAnnouncement()
+    // getAnnouncement()
   }, [user])
 
-  const getAnnouncement = async () => {
-    const { data } = await axiosInstance({
-      url: `/api/announcements?populate=card_image&sort=updatedAt:desc`,
-      method: "GET",
-    });
-    setAnnouncementsData(data.data);
-  };
+  // const getAnnouncement = async () => {
+  //   const { data } = await axiosInstance({
+  //     url: `/api/announcements?populate=card_image&sort=updatedAt:desc`,
+  //     method: "GET",
+  //   });
+  //   setAnnouncementsData(data.data);
+  // };
 
   return (
     <div
@@ -201,11 +201,11 @@ const PopoverSidebar = ({ trans }) => {
             </li>
           ))}
         </ul>
-        {(!collapsed && announcementsData.length > 0) && (
+        {/* {(!collapsed && announcementsData.length > 0) && (
           <div className="-mx-2 mb-4">
             <AddBlock />
           </div>
-        )}
+        )} */}
       </ScrollArea>
     </div>
   );

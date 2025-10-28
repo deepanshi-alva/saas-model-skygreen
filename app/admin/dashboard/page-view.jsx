@@ -71,10 +71,10 @@ const DashboardPageView = ({ trans }) => {
 
   const course_dynamicSeries = pieStats?.topCourses?.map(course => course?.average_rating);
   const course_dynamicTitles = pieStats?.topCourses?.map(course => course?.title);
-console.log("222course_dynamicTitles--",course_dynamicTitles)
+  console.log("222course_dynamicTitles--", course_dynamicTitles)
   const category_dynamicSeries = pieStats?.topCategories?.map(course => parseInt(course?.courses_count, 10));
   const category_dynamicTitles = pieStats?.topCategories?.map(course => course?.category_name);
-  console.log("category_dynamicTitles---",category_dynamicTitles)
+  console.log("category_dynamicTitles---", category_dynamicTitles)
 
   const getTopInstructors = async () => {
     try {
