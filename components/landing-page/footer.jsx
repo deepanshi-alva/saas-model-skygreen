@@ -93,7 +93,7 @@ const Footer = () => {
           <p>Email support queries to deepanshisinghal1523@gmail.com</p>
           <p className="text-primary-foreground flex-none text-base font-medium">
             Made by {" "}
-            <Link href="https://www.vocso.com" target="__blank" className="text-primary hover:underline">DEEPANSHI</Link></p>
+            <Link href="https://www.linkedin.com/in/deepanshi-singhal-195365221/" target="__blank" className="text-primary hover:underline">DEEPANSHI</Link></p>
         </div>
       </div>
     </footer>

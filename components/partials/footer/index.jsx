@@ -91,7 +91,7 @@ const FooterContent = () => {
         <a
           className="text-primary"
           target="__blank"
-          href="https://www.vocso.com"
+          href="https://www.linkedin.com/in/deepanshi-singhal-195365221/"
         >
           DEEPANSHI
         </a>

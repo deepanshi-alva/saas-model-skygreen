@@ -3036,55 +3036,39 @@ export const NavBar = {
       isHeader: true,
       title: "Dashboard",
     },
-    // {
-    //   title: 'Dashboard',
-    //   isOpen: false,
-    //   isHide: false,
-    //   icon: Lmsdashboard,
-    //   child: [
-    //     // {
-    //     //   title: "Admin",
-    //     //   icon: Google,
-    //     //   href: '/admin/dashboard'
-    //     // },
-    //     // {
-    //     //   title: "Manager",
-    //     //   icon: Google,
-    //     //   href: '/manager/manager-dashboard'
-    //     // },
-    //     {
-    //       title: "User",
-    //       icon: Pointer,
-    //       // href: '/admin/user-dashboard'
-    //       href: '#'
-    //     },
-    //     // {
-    //     //   title: 'Announcement',
-    //     //   href: '/public/announcement',
-    //     //   icon: DashBoard,
-    //     // },
-    //     // {
-    //     //   title: "Course Proposals",
-    //     //   icon: Pointer,
-    //     //   href: '/public/course-proposals'
-    //     // },
-    //     // {
-    //     //   title: "Propose Course",
-    //     //   icon: Pointer,
-    //     //   href: '/public/propose-course'
-    //     // },
-    //   ],
-
-    // },
     {
-      isHeader: true,
-      title: "Courses",
-    },
-    {
-      title: 'Courses', href: '/public/course-categories', isOpen: false,
+      title: 'Dashboard',
+      isOpen: false,
       isHide: false,
-      icon: Courses,
+      icon: Lmsdashboard,
+      child: [
+        {
+          title: "Admin",
+          icon: Google,
+          href: '/admin/dashboard'
+        },
+        // {
+        //   title: "User",
+        //   icon: Pointer,
+        //   href: '/admin/user-dashboard',
+        //   href: '#'
+        // },
+        // {
+        //   title: 'Announcement',
+        //   href: '/public/announcement',
+        //   icon: DashBoard,
+        // },
+      ],
     },
+    // {
+    //   isHeader: true,
+    //   title: "Courses",
+    // },
+    // {
+    //   title: 'Courses', href: '/public/course-categories', isOpen: false,
+    //   isHide: false,
+    //   icon: Courses,
+    // },
     // {
     //   title: 'My Learning', href: '/public/course', isOpen: false,
     //   isHide: false,
@@ -3182,15 +3166,29 @@ export const NavBar = {
     //   isHide: false,
     //   icon: Certificate,
     // },
-    // {
-    //   isHeader: true,
-    //   title: "Manage Users",
-    // },
-    // {
-    //   title: 'User', href: '/admin/user', isOpen: false,
-    //   isHide: false,
-    //   icon: Lmsuser,
-    // },
+    {
+      isHeader: true,
+      title: "Manage Cases",
+    },
+    {
+      title: 'Cases', href: '/admin/user', isOpen: false,
+      isHide: false,
+      icon: Lmsuser,
+    },
+    {
+      title: 'Login Info', href: '/admin/user', isOpen: false,
+      isHide: false,
+      icon: Lmsuser,
+    },
+    {
+      isHeader: true,
+      title: "Manage Users",
+    },
+    {
+      title: 'User', href: '/admin/user', isOpen: false,
+      isHide: false,
+      icon: Lmsuser,
+    },
     // {
     //   title: 'Employee Performance Analysis', href: '/admin/employee-performance', isOpen: false,
     //   isHide: false,
