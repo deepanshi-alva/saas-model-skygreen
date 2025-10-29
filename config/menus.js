@@ -3176,16 +3176,16 @@ export const NavBar = {
       icon: Lmsuser,
     },
     {
-      title: 'Login Info', href: '/admin/user', isOpen: false,
-      isHide: false,
-      icon: Lmsuser,
-    },
-    {
       isHeader: true,
       title: "Manage Users",
     },
     {
       title: 'User', href: '/admin/user', isOpen: false,
+      isHide: false,
+      icon: Lmsuser,
+    },
+    {
+      title: 'Login Info', href: '/admin/user', isOpen: false,
       isHide: false,
       icon: Lmsuser,
     },
