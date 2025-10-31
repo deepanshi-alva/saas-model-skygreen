@@ -20,9 +20,10 @@ import { useAppSelector } from "@/provider/Store";
 import AddUser from "../../../app/admin/user/add-user";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import Cookies from "js-cookie"; 
+import Cookies from "js-cookie";
 import { signOut } from "next-auth/react";
 import { getFilePath } from "@/config/file.path";
+import axiosInstance from "@/config/axios.config";
 
 const ProfileInfo = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -35,61 +36,90 @@ const ProfileInfo = () => {
     setIsFormOpen(false);
     setSelectedUser(null);
   };
-  const user = useAppSelector(state => state.user);
-  const profileImage = user?.profileImage ? getFilePath(user.profileImage) : ''
+  const user = useAppSelector((state) => state.user);
+  const profileImage = user?.profileImage ? getFilePath(user.profileImage) : "";
   const token = localStorage.getItem("token");
 
+  // const logout = async () => {
+  //   if (!token) {
+  //     toast.loading("Logging out...");
+  //     signOut({ callbackUrl: "/" });
+  //     Cookies.remove("next-auth.callback-url");
+  //     Cookies.remove("next-auth.csrf-token");
+  //     Cookies.remove("next-auth.session-token");
+  //     localStorage.clear();
+  //   } else {
+  //     localStorage.clear()
+  //     window.location.href = window.location.origin;
+  //   }
+  // }
+
   const logout = async () => {
-    if (!token) {
-      toast.loading("Logging out...");
-      signOut({ callbackUrl: "/" });
-      Cookies.remove("next-auth.callback-url");
-      Cookies.remove("next-auth.csrf-token");
-      Cookies.remove("next-auth.session-token");
+    try {
+      const token = localStorage.getItem("token");
+      console.log("we are getting logout", token);
+
+      if (token) {
+        console.log("entered into the logout if condition");
+
+        // ✅ No full URL — axiosInstance already has baseURL
+        const res = await axiosInstance.post("/api/logout");
+
+        console.log("what a dragggggggggggg", res.data);
+      }
+
+      toast.success("Logged out successfully");
+    } catch (error) {
+      console.error("Logout tracking failed:", error?.response?.data || error);
+    } finally {
       localStorage.clear();
-    } else {
-      localStorage.clear()
+      signOut({ callbackUrl: "/" });
       window.location.href = window.location.origin;
     }
-  }
+  };
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild className=" cursor-pointer">
         <div className=" flex items-center  ">
-          {profileImage ?
+          {profileImage ? (
             <Image
               src={profileImage}
               alt={user?.firstName ?? ""}
               width={36}
               height={36}
               className="rounded-full"
-            /> : <Image
+            />
+          ) : (
+            <Image
               src={avatar1.src}
               alt={"Profile"}
               width={36}
               height={36}
               className="rounded-full"
             />
-          }
+          )}
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56 p-0" align="end">
         <DropdownMenuLabel className="flex gap-2 items-center mb-1 p-3">
-          {profileImage ?
+          {profileImage ? (
             <Image
               src={profileImage}
               alt={user?.firstName ?? ""}
               width={36}
               height={36}
               className="rounded-full"
-            /> : <Image
+            />
+          ) : (
+            <Image
               src={avatar1.src}
               alt={"Profile"}
               width={36}
               height={36}
               className="rounded-full"
             />
-          }
+          )}
           <div>
             <div className="text-sm font-medium text-default-800 capitalize ">
               {user?.firstName ?? user?.email}
