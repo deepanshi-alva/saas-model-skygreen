@@ -55,28 +55,29 @@ const ProfileInfo = () => {
   // }
 
   const logout = async () => {
-    try {
-      const token = localStorage.getItem("token");
-      console.log("we are getting logout", token);
+  try {
+    // const token = localStorage.getItem("token");
+    // console.log("we are getting logout", token);
 
-      if (token) {
-        console.log("entered into the logout if condition");
+    if (token) {
+      console.log("entered into the logout if condition");
 
-        // ✅ No full URL — axiosInstance already has baseURL
-        const res = await axiosInstance.post("/api/logout");
+      // Token automatically sent via axiosInstance interceptor
+      const res = await axiosInstance.post("/api/logout");
 
-        console.log("what a dragggggggggggg", res.data);
-      }
-
-      toast.success("Logged out successfully");
-    } catch (error) {
-      console.error("Logout tracking failed:", error?.response?.data || error);
-    } finally {
-      localStorage.clear();
-      signOut({ callbackUrl: "/" });
-      window.location.href = window.location.origin;
+      console.log("what a dragggggggggggg", res.data);
     }
-  };
+
+    toast.success("Logged out successfully");
+  } catch (error) {
+    console.error("Logout tracking failed:", error?.response?.data || error);
+  } finally {
+    localStorage.clear();
+    signOut({ callbackUrl: "/" });
+    window.location.href = window.location.origin;
+  }
+};
+
 
   return (
     <DropdownMenu>
@@ -126,7 +127,7 @@ const ProfileInfo = () => {
             </div>
           </div>
         </DropdownMenuLabel>
-        <DropdownMenuItem
+        {/* <DropdownMenuItem
           onClick={(e) => {
             e.preventDefault();
             handleUpdateUser(user);
@@ -135,7 +136,7 @@ const ProfileInfo = () => {
         >
           <Icon icon="heroicons-outline:pencil" className="w-4 h-4" />
           Edit Profile
-        </DropdownMenuItem>
+        </DropdownMenuItem> */}
 
         {isFormOpen && (
           <AddUser

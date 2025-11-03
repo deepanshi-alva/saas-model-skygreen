@@ -64,7 +64,7 @@ const Header = ({ handleOpenSearch, roleType }) => {
               sidebarType={sidebarType}
             />
           </div>
-          {/* {location.endsWith("/dashboard") && <AdminPage />} */}
+          {location.endsWith("/dashboard") && <AdminPage />}
           {/* {location.endsWith("/user-dashboard") && <UserPage />}
           {location.endsWith("/manager-dashboard") && <ManagerPage />}
           {location.endsWith("/trainer-dashboard") && <ManagerPage />} */}
@@ -94,7 +94,7 @@ export default Header;
 //   const timer = setTimeout(() => {
 //     window.dispatchEvent(new Event('resize'));
 //   }, 100);
-  
+
 //   return () => clearTimeout(timer);
 // }, [course_details]);
 
@@ -178,92 +178,68 @@ export default Header;
 // };
 const AdminPage = () => {
   const [counts, setCounts] = useState({
-    userCount: 0,
-    assessmentCount: 0,
-    trainerCount: 0,
-    enrolledCount: 0,
-    publishedCourseCount: 0,
-    inactiveUser: 0,
-    electiveParticipationCount: 0,
-    mandatoryParticipationCount: 0,
-    overallParticipationPerc: 0,
-    mandatoryPercentage: 0,
-    electivePercentage: 0,
-    avgWatchTimePerMonth: 0,
+    totalUsers: 0,
+    onlineUsers: 0,
+    loggedInToday: 0,
+    inactiveUsers: 0,
+    offlineUsers: 0
+  });
+  const [leads, setLeads] = useState({
+    totalLeads: 0,
+    untouchedLeads: 0,
+    activeLeads: 0,
+    pendingLeads: 0,
+    resolvedLeads: 0,
+    // followupScheduled: 0,
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const cardMappings = [
     {
-      key: "userCount",
+      key: "totalUsers",
       title: "Registered Users",
       color: "info",
       icon: "mdiusers",
     },
     {
-      key: "enrolledCount",
-      title: "Enrolled in Courses",
+      key: "onlineUsers",
+      title: "Users currently active",
       color: "info",
       icon: "mdiusers",
     },
     {
-      key: "trainerCount",
-      title: "Registered Trainers",
+      key: "loggedInToday",
+      title: "Number of times users logged in today",
       color: "primary",
       icon: "usertie",
     },
     {
-      key: "inactiveUser",
-      title: "Inactive Users",
+      key: "inactiveUsers",
+      title: "Users not logged in for > 7 days",
       color: "destructive",
       icon: "inactiveusers",
     },
     {
-      key: "publishedCourseCount",
-      title: "Published Courses",
+      key: "offlineUsers",
+      title: "Users currently inactive",
       color: "info",
       icon: "publishcourses",
     },
-    {
-      key: "assessmentCount",
-      title: "Published Assessments",
-      color: "info",
-      icon: "assessments",
-    },
-    {
-      key: "avgWatchTimePerMonth",
-      title: "Average Time Spent (Hrs/Month)",
-      color: "info",
-      icon: "timespent",
-    },
-    {
-      key: "enrolledCount",
-      title: "Overall Participation",
-      color: "success",
-      cardColor: "bg-green-100",
-      icon: "Session",
-      hasPerc: true,
-      percentageKey: "overallParticipationPerc",
-    },
-    {
-      key: "mandatoryParticipationCount",
-      title: "Mandatory Course Participation",
-      color: "primary",
-      cardColor: "bg-orange-100",
-      icon: "Session",
-      hasPerc: true,
-      percentageKey: "mandatoryPercentage",
-    },
-
-    {
-      key: "electiveParticipationCount",
-      title: "Elective Course Participation",
-      color: "info",
-      cardColor: "bg-cyan-100",
-      icon: "Increase",
-      hasPerc: true,
-      percentageKey: "electivePercentage",
-    },
+    { key: "totalLeads", title: "Total Leads", color: "primary", icon: "mdiusers" },
+    { key: "untouchedLeads", title: "Untouched Leads", color: "warning", icon: "inactiveusers" },
+    { key: "activeLeads", title: "Active Leads", color: "success", icon: "publishcourses" },
+    { key: "pendingLeads", title: "Pending Leads", color: "info", icon: "assessments" },
+    { key: "resolvedLeads", title: "Resolved Leads", color: "info", icon: "usertie" },
+    // { key: "followupScheduled", title: "Follow-Up Scheduled", color: "primary", icon: "Session" }
+    // {
+    //   key: "electiveParticipationCount",
+    //   title: "Elective Course Participation",
+    //   color: "info",
+    //   cardColor: "bg-cyan-100",
+    //   icon: "Increase",
+    //   hasPerc: true,
+    //   percentageKey: "electivePercentage",
+    // },
   ];
   useEffect(() => {
     const fetchDashboardCounts = async () => {
@@ -272,9 +248,11 @@ const AdminPage = () => {
 
       try {
         const response = await axiosInstance.get(
-          `/api/dashboard/counts?type=admin`
+          `/api/user-insights`
         );
-        setCounts(response?.data?.counts);
+        console.log("this is the count response of the users", response);
+        setCounts(response?.data?.summary);
+        setLeads(response?.data?.leads);
       } catch (err) {
         setError(err.response?.data || err.message);
       } finally {
