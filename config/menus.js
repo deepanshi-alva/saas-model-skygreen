@@ -3171,7 +3171,7 @@ export const NavBar = {
       title: "Manage Cases",
     },
     {
-      title: 'Cases', href: '/admin/user', isOpen: false,
+      title: 'Cases', href: '#', isOpen: false,
       isHide: false,
       icon: Lmsuser,
     },
@@ -3180,7 +3180,7 @@ export const NavBar = {
       title: "Manage Users",
     },
     {
-      title: 'User', href: '/admin/user', isOpen: false,
+      title: 'User', href: '#', isOpen: false,
       isHide: false,
       icon: Lmsuser,
     },

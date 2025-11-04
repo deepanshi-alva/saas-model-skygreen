@@ -180,18 +180,23 @@ const AdminPage = () => {
   const [counts, setCounts] = useState({
     totalUsers: 0,
     onlineUsers: 0,
-    loggedInToday: 0,
     inactiveUsers: 0,
-    offlineUsers: 0
-  });
-  const [leads, setLeads] = useState({
+    offlineUsers: 0,
     totalLeads: 0,
     untouchedLeads: 0,
     activeLeads: 0,
     pendingLeads: 0,
     resolvedLeads: 0,
-    // followupScheduled: 0,
+    followupScheduled: 0,
   });
+  // const [leads, setLeads] = useState({
+  //   totalLeads: 0,
+  //   untouchedLeads: 0,
+  //   activeLeads: 0,
+  //   pendingLeads: 0,
+  //   resolvedLeads: 0,
+  //   followupScheduled: 0,
+  // });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const cardMappings = [
@@ -206,12 +211,6 @@ const AdminPage = () => {
       title: "Users currently active",
       color: "info",
       icon: "mdiusers",
-    },
-    {
-      key: "loggedInToday",
-      title: "Number of times users logged in today",
-      color: "primary",
-      icon: "usertie",
     },
     {
       key: "inactiveUsers",
@@ -230,7 +229,7 @@ const AdminPage = () => {
     { key: "activeLeads", title: "Active Leads", color: "success", icon: "publishcourses" },
     { key: "pendingLeads", title: "Pending Leads", color: "info", icon: "assessments" },
     { key: "resolvedLeads", title: "Resolved Leads", color: "info", icon: "usertie" },
-    // { key: "followupScheduled", title: "Follow-Up Scheduled", color: "primary", icon: "Session" }
+    { key: "followupScheduled", title: "Follow-Up Scheduled", color: "primary", icon: "Session" }
     // {
     //   key: "electiveParticipationCount",
     //   title: "Elective Course Participation",
@@ -252,7 +251,7 @@ const AdminPage = () => {
         );
         console.log("this is the count response of the users", response);
         setCounts(response?.data?.summary);
-        setLeads(response?.data?.leads);
+        // setLeads(response?.data?.leads);
       } catch (err) {
         setError(err.response?.data || err.message);
       } finally {
